@@ -1,6 +1,16 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
-
+<head>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+// has the google object loaded?
+if (window.google && window.google.load) {
+    google.load("jquery", "1.3.2");
+} else {
+    document.write('<script type="text/javascript" src="http://joecrawford.com/jquery-1.3.2.min.js"><\/script>');
+}
+</script>
+</head>
 <body>
 <!-- <input type="file" name="file" id="file"> -->
  <input type="file" id="fileUpload" />
@@ -10,10 +20,7 @@
 </div>
 </body>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>
-   window.jQuery || document.write('<script src="https://github.com/pingyangtiaer/PRISMWeatherExtract/blob/master/jquery.min.js"><\/script>');
-</script>
+<script type="text/javascript">
 $(function () {
     $("#upload").bind("click", function () {
         var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
@@ -46,24 +53,4 @@ $(function () {
     });
 });
 </script>
-
-<!-- <script> -->
-<!-- document.getElementById('file').onchange = function(){ -->
-
-  <!-- var file = this.files[0]; -->
-
-  <!-- var reader = new FileReader(); -->
-  <!-- reader.onload = function(progressEvent){ -->
-    <!-- // Entire file -->
-    <!-- console.log(this.result); -->
-
-    <!-- // By lines -->
-    <!-- var lines = this.result.split('\n'); -->
-    <!-- for(var line = 0; line < lines.length; line++){ -->
-      <!-- console.log(lines[line]); -->
-    <!-- } -->
-  <!-- }; -->
-  <!-- reader.readAsText(file); -->
-<!-- }; -->
-<!-- </script> -->
-</html> 
+</html>
